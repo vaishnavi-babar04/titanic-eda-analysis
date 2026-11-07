@@ -4,25 +4,33 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 # Load Dataset
 df = pd.read_csv("Titanic-Dataset.csv")
+
 # Display First 5 Rows
 print("First 5 Rows:")
 print(df.head())
+
 # Dataset Information
 print("\nDataset Information:")
 print(df.info())
+
 # Dataset Shape
 print("\nDataset Shape:", df.shape)
+
 # Missing Values
 print("\nMissing Values:")
 print(df.isnull().sum())
+
 # Statistical Summary
 print("\nStatistical Summary:")
 print(df.describe())
+
 # -----------------------------
 # Data Cleaning
 # -----------------------------
+
 # Fill missing Age values with median
 df["Age"] = df["Age"].fillna(df["Age"].median())
 # Fill missing Embarked values with mode
@@ -32,6 +40,7 @@ df.drop("Cabin", axis=1, inplace=True)
 # Check after cleaning
 print("\nMissing Values After Cleaning:")
 print(df.isnull().sum())
+
 # -----------------------------
 # Visualization 1: Survival Count
 # -----------------------------
